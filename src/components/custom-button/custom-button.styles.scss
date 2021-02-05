@@ -1,0 +1,35 @@
+.submit-btn{
+        outline: none;
+        width: 50%;
+        margin: 15px auto;
+        padding:10px;
+        background-color: rgb(60, 216, 46);
+        border: 3px solid lightgreen;
+        //font-weight: bold;
+        transition: all 1s ease;
+
+    &:hover{
+        transform: translateY(-7px);
+        box-shadow: 0 10px 20px black;
+        background-color:rgba(9, 143, 9, 0.767);
+        color:white
+
+    }
+
+    &:active{
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px black;
+    } 
+    
+    &.google-sign-in{
+        background-color: #4285f4;
+        border: 3px solid rgb(101, 160, 228);
+
+        &:hover{
+            background-color: #357ae8;
+            //border:none;
+            color:white;
+        }
+    }
+}
+

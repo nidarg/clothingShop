@@ -1,0 +1,39 @@
+.sign-in{
+    height: 50vh;
+    width: 30vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form{
+        width:100%;
+        height: 70%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        //@at-root: space-between;
+        transition: all .5s;
+        .label{
+            height:10% ;
+            font-weight: bold;
+            padding-right: 5px;
+            margin-bottom: 10px;
+        }
+        .input{
+            padding:4%;
+            background-color: lightgrey;
+            margin-bottom: 20px;
+            border:none;
+
+            &:focus{
+                background-color: black;
+                color:white;
+            }
+        }
+
+  
+    }
+    
+}

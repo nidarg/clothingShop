@@ -1,0 +1,44 @@
+I don't know what you would use an admin panel for in this project, 
+besides adding data to your firestore 
+which we can add either manually or programmatically already. 
+However, I suppose it's a good challenge and 
+practice is always good anyway. I'm still a student myself, 
+so take what I'm suggesting with a grain of salt...
+
+Add a "role" to the user when signing up a new user in the app. 
+This user "role" is just a string of text that specifies 
+what permissions the user has in the context of our app. 
+For something simple like this project without the need for much 
+distinction between clearance levels, simply either "user" or "admin"
+ should do.
+
+When the sign up process is triggered, automatically assign 
+the new user's role as a simple 'user'. 
+You can manually change your own account's role to 'admin' in firestore once. Then in your admin panel you can have a button that pops up a form asking for a user to enter and a role change, in order to change their "role" in the app to "admin".... or a little more simple, yet ugly; you can display a button that updates a user's role next to every single name....
+
+I'd start by just making the admin panel page you want straight away. 
+Hook it up like any other page so far and test it out. 
+Forget the fact that you only want admins to see it eventually.
+ Just get a simple version of the panel you want finished. 
+ Then conditionally render it just like we conditionally render 
+ "sign in/ sign out" in the <Header> component, 
+ except testing against the role of the user.
+
+If the user is a simple "user", you can block them from
+ the admin page just like we do with the signIn page 
+ when the session's user is already signed in; they will simply be kicked out back to the home page. If the user is an admin, you can render an "admin" link in your header that will take you to the panel.
+
+I hope that helps and gives you some decent ideas to play with.
+ Remember this is a basic, insecure solution and you could probably
+  easily improve the security behind this idea with a bit of research.
+   Just start simple and progress as you go.
+
+Best of luck!
+
+
+
+p.s: As I was typing, I ran into this article on an interesting 
+library called CASL that seems like it would fit this solution well.
+ I've never personally used it, but it seems better
+  than writing an if statement or ternary operator with 
+  "user.role === 'admin'" everywhere.

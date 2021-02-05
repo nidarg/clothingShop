@@ -1,0 +1,30 @@
+.header{
+    height: 10vh;
+    width:100%;
+    display:flex;
+    padding:10px 0;
+    justify-content: space-between;
+
+}
+
+.logo-container{
+    
+    display: inline-block;
+    .logo{
+        height: 8vh;
+        width: auto;
+    }
+}
+
+.options{
+    width:50%;
+    height: 8vh;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option{
+        padding:0 15px;
+        cursor: pointer;
+    }
+}
