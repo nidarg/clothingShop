@@ -29,7 +29,7 @@ class SignUp extends React.Component{
             // which destructure{user}
             // then based on object returned by auth library we create a new
             // document in database with createUserProfileDocument
-            const {user} = await auth.createUserWithEmailAndPassword(email,password);
+            const {user} = await auth.createUserWithEmailAndPassword(email,password); // this is the authUser object 
             await createUserProfileDocument(user, {displayName});
             // after insert user into database(await)-> we set state to initial state
             this.setState({

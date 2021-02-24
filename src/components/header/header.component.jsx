@@ -4,7 +4,8 @@ import {ReactComponent as Logo} from '../assets/logo.svg';
 import './header.styles.scss';
 import{auth} from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
-
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 
 // because header component use currentUser we need 
@@ -12,7 +13,7 @@ import {connect} from 'react-redux';
 // for that import higher order component {connect}
 // which connect the user state to header component by 
 // setting the current user to user reducer-> see mapStateToProps()
-const Header = ({currentUser})=>{
+const Header = ({currentUser,hidden})=>{
     //console.log(`currentUser:${currentUser}`)
     
     return(
@@ -39,15 +40,19 @@ const Header = ({currentUser})=>{
                     SIGN IN
                 </Link>
                 )}
-           
-            
+                <CartIcon/>
         </div>
+        {
+            hidden?null:<CartDropdown/>
+        }
+        
     </div>
     )
 }
 
 const mapStateToProps = state=>({
-    currentUser:state.user.currentUser 
+    currentUser:state.user.currentUser ,
+    hidden:state.cart.hidden
     // this is equivalent with currentuser:rootReducer.user.currentUser
 });
 
