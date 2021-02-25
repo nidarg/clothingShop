@@ -10,15 +10,19 @@
     top:80px;
     right: 0;
     z-index: 5;
-}
 
-.cart-items{
-    height: 300px;
-    display:flex;
-    flex-direction: column;
-    overflow:scroll;
-}
+    .empty-message{
+        font-size: 18px;
+        margin:16px auto;
+    }
+    .cart-items{
+        height: 300px;
+        display:flex;
+        flex-direction: column;
+        overflow-y:scroll;
+    }
 
-button{
-    margin-top:auto;
+    button{
+        margin-top:5%;
+    }
 }
