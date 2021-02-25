@@ -12,6 +12,10 @@ const selectCart = state=> state.cart     //from cart reducer(represents a slide
      (cart)=>cart.cartItems
  );
 
+ export const selectCartHidden = createSelector(
+     [selectCart],
+     cart=>cart.hidden
+ )
  export const selectCartItemsCount = createSelector(
      [selectCartItems],
      cartItems=>cartItems.reduce((acumulatedQuantity,cartItem)=>
